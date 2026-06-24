@@ -293,17 +293,17 @@
         <div class="gallery-container">
             <!-- First Image (Yellow/Paisley Saree) -->
             <div class="gallery-card">
-                <img src="att.0xUWtgE-8u8LTTL7FkBUT3j2VYeW6dFi71W1d4Brk5I.jpeg" alt="Beautiful Wifey">
+                <img src="https://lh3.googleusercontent.com/d/1-0xUWtgE-8u8LTTL7FkBUT3j2VYeW6dFi71W1d4Brk5I" alt="Beautiful Wifey">
                 <div class="gallery-caption">"Your elegance in this saree completely takes my breath away. Absolutely ethereal... 😍✨"</div>
             </div>
             <!-- Second Image (Brown Dress/Dupatta looking back) -->
             <div class="gallery-card">
-                <img src="att.hQHk3DE732jnvcn9njh5kbE_Q6b-3pEOodsN4T5g9oM.jpeg" alt="Sweetest Smile">
+                <img src="https://lh3.googleusercontent.com/d/1-hQHk3DE732jnvcn9njh5kbE_Q6b-3pEOodsN4T5g9oM" alt="Sweetest Smile">
                 <div class="gallery-caption">"That gentle gaze and shy smile of yours can melt my heart in a split second. 💕"</div>
             </div>
             <!-- Third Image (Red and Yellow Bandhani Saree) -->
             <div class="gallery-card">
-                <img src="att.GD1qj3ghFI4fEyQ7JUL4W3nKaMnUF2TPJZxauNMTgN4.jpeg" alt="Stunning Look">
+                <img src="https://lh3.googleusercontent.com/d/1-GD1qj3ghFI4fEyQ7JUL4W3nKaMnUF2TPJZxauNMTgN4" alt="Stunning Look">
                 <div class="gallery-caption">"Pure perfection. Every single time I look at you, I fall in love all over again. ❤️🌟"</div>
             </div>
         </div>
