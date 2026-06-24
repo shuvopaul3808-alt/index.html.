@@ -265,7 +265,6 @@
 </head>
 <body>
 
-    <!-- 1. Birthday Cake & Candle Animation -->
     <section id="birthday-intro">
         <div class="cake-container">
             <div class="candle">
@@ -277,7 +276,6 @@
         <button class="next-btn" onclick="scrollToSection('home')">Let's Begin Our Journey ✨</button>
     </section>
 
-    <!-- 2. Home & Countdown -->
     <section id="home">
         <h2>Our Beautiful Journey ❤️</h2>
         <div class="countdown-container">
@@ -287,30 +285,25 @@
         <button class="next-btn" onclick="scrollToSection('gallery')">See Your Beautiful Pictures 📸</button>
     </section>
 
-    <!-- 3. Memory Gallery -->
     <section id="gallery">
         <h2>Memory Gallery 📸</h2>
         <div class="gallery-container">
-            <!-- First Image (Yellow/Paisley Saree) -->
             <div class="gallery-card">
-                <img src="https://lh3.googleusercontent.com/d/1-0xUWtgE-8u8LTTL7FkBUT3j2VYeW6dFi71W1d4Brk5I" alt="Beautiful Wifey">
+                <img src="https://i.ibb.co/SSph5Ry/att-GD1qj3gh-FI4f-Ey-Q7-JUL4-W3n-Ka-Mn-UF2-TPJZxau-NMTg-N4.jpg" alt="Beautiful Wifey">
                 <div class="gallery-caption">"Your elegance in this saree completely takes my breath away. Absolutely ethereal... 😍✨"</div>
             </div>
-            <!-- Second Image (Brown Dress/Dupatta looking back) -->
             <div class="gallery-card">
-                <img src="https://lh3.googleusercontent.com/d/1-hQHk3DE732jnvcn9njh5kbE_Q6b-3pEOodsN4T5g9oM" alt="Sweetest Smile">
+                <img src="https://i.ibb.co/hxhR8HdY/att-h-QHk3-DE732jnvcn9njh5kb-E-Q6b-3p-EOods-N4-T5g9o-M.jpg" alt="Sweetest Smile">
                 <div class="gallery-caption">"That gentle gaze and shy smile of yours can melt my heart in a split second. 💕"</div>
             </div>
-            <!-- Third Image (Red and Yellow Bandhani Saree) -->
             <div class="gallery-card">
-                <img src="https://lh3.googleusercontent.com/d/1-GD1qj3ghFI4fEyQ7JUL4W3nKaMnUF2TPJZxauNMTgN4" alt="Stunning Look">
+                <img src="https://i.ibb.co/x8DWYhVV/att-0x-UWtg-E-8u8-LTTL7-Fk-BUT3j2-VYe-W6d-Fi71-W1d4-Brk5-I.jpg" alt="Stunning Look">
                 <div class="gallery-caption">"Pure perfection. Every single time I look at you, I fall in love all over again. ❤️🌟"</div>
             </div>
         </div>
         <button class="next-btn" onclick="scrollToSection('letter')">Read a Surprise Letter 💌</button>
     </section>
 
-    <!-- 4. Digital Love Letter -->
     <section id="letter">
         <h2>A Message From My Heart ✨</h2>
         <button class="btn" onclick="toggleLetter()">Click here for a surprise 👉👈</button>
@@ -327,7 +320,6 @@
         <button class="next-btn" style="margin-top: 40px;" onclick="scrollToSection('reasons')">Why I Love You 💌</button>
     </section>
 
-    <!-- 5. Reasons Why I Love You -->
     <section id="reasons">
         <h2>Reasons Why I Love You 🎀</h2>
         <div class="reasons-stack">
@@ -347,7 +339,6 @@
         <button class="next-btn" onclick="scrollToSection('surprise')">One Last Thing... 🌙</button>
     </section>
 
-    <!-- 6. Birthday Wish & Final Surprise -->
     <section id="surprise">
         <h1 class="final-title">Happy Birthday, My Love! 🌙</h1>
         <p class="final-text">
