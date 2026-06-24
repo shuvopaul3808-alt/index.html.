@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Favorite Person ❤️</title>
+    <title>Happy Birthday My Love ❤️</title>
     <style>
         :root {
             --primary-color: #ff477e;
             --secondary-color: #ff85a1;
-            --bg-color: #ffe5ec;
+            --bg-color: #fff0f3;
             --text-color: #4a4a4a;
         }
 
@@ -17,7 +17,6 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
         }
 
         body {
@@ -26,174 +25,139 @@
             overflow-x: hidden;
         }
 
-        /* --- Navbar --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: 0.3s;
-            padding: 5px 10px;
-            border-radius: 15px;
-        }
-
-        nav a:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* --- Sections General --- */
+        /* --- Fullpage Sections --- */
         section {
-            padding: 100px 20px 60px 20px;
             min-height: 100vh;
+            width: 100vw;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 40px 20px;
             text-align: center;
+            position: relative;
         }
 
         h2 {
             font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 30px;
-            position: relative;
         }
 
-        /* --- Home & Countdown --- */
-        #home {
+        /* --- 1. Birthday Cake & Intro Intro Section --- */
+        #birthday-intro {
             background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
         }
 
-        .main-title {
-            font-size: 3.5rem;
+        .cake-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        /* Pure CSS Candle & Flame Animation */
+        .candle {
+            width: 16px;
+            height: 60px;
+            background: linear-gradient(to top, #ffb3c1, #fff);
+            border-radius: 4px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .flame {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 24px;
+            background: #ffb703;
+            border-radius: 50% 50% 20% 20%;
+            box-shadow: 0 0 10px #ffb703, 0 0 20px #fb8500;
+            animation: flicker 1s ease-in-out infinite alternate;
+        }
+
+        .cake-text {
+            font-size: 2.5rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
-            animation: heartBeat 2s infinite;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: popIn 1.5s ease;
+        }
+
+        /* --- 2. Home & Countdown --- */
+        #home {
+            background-color: #fff0f3;
         }
 
         .countdown-container {
             background: white;
-            padding: 20px 40px;
-            border-radius: 50px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            padding: 30px 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(255, 71, 126, 0.15);
             margin-top: 20px;
+            max-width: 500px;
+            width: 90%;
         }
 
         #timer {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
-            color: var(--text-color);
+            color: var(--primary-color);
+            margin-top: 15px;
         }
 
-        /* --- Our Story (Timeline) --- */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+        /* --- 3. Memory Gallery --- */
+        #gallery {
+            background-color: #ffe5ec;
         }
 
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        .timeline-item::after {
-            content: '❤️';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            top: 15px;
-            background-color: white;
-            border-radius: 50%;
-            z-index: 1;
-            font-size: 0.8rem;
+        .gallery-container {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
+            max-width: 600px;
         }
 
-        .left { left: 0; text-align: right; }
-        .right { left: 50%; text-align: left; }
-        .right::after { left: -12px; }
-
-        .content {
+        .gallery-card {
+            background: white;
             padding: 20px;
-            background: white;
-            position: relative;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.4s;
         }
 
-        /* --- Gallery --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        .gallery-card:hover {
+            transform: scale(1.03) rotate(1deg);
+        }
+
+        .gallery-card img {
             width: 100%;
-            max-width: 1000px;
-        }
-
-        .gallery-item {
-            background: white;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
+            max-height: 450px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 15px;
         }
 
-        .gallery-item p {
-            margin-top: 10px;
+        .gallery-caption {
+            margin-top: 15px;
+            font-size: 1.1rem;
             font-style: italic;
+            color: #555;
+            line-height: 1.4;
         }
 
-        /* --- Love Letter --- */
+        /* --- 4. Love Letter --- */
+        #letter {
+            background-color: #fff0f3;
+        }
+
         .btn {
             background: var(--primary-color);
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 1.1rem;
+            padding: 15px 35px;
+            font-size: 1.2rem;
             border-radius: 30px;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(255, 71, 126, 0.4);
@@ -207,245 +171,192 @@
 
         .hidden-letter {
             display: none;
-            max-width: 600px;
+            max-width: 550px;
+            width: 90%;
             background: white;
-            padding: 40px;
-            border-radius: 20px;
+            padding: 35px;
+            border-radius: 25px;
             margin-top: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
             line-height: 1.8;
             text-align: left;
             border-left: 8px solid var(--primary-color);
-            animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease forwards;
         }
 
-        /* --- Reasons I Love You --- */
-        .reasons-container {
+        /* --- 5. Reasons Why I Love You --- */
+        #reasons {
+            background-color: #ffe5ec;
+        }
+
+        .reasons-stack {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
             gap: 20px;
-            max-width: 800px;
+            max-width: 500px;
+            width: 90%;
         }
 
         .reason-card {
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 15px;
-            width: 220px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
             border-bottom: 4px solid var(--secondary-color);
+            transition: 0.3s;
         }
 
         .reason-card:hover {
             transform: translateY(-5px);
         }
 
-        /* --- Quiz & Interactive --- */
-        .quiz-container {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 100%;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        /* --- 6. Birthday Wish & Final Surprise --- */
+        #surprise {
+            background: linear-gradient(to bottom, #fff0f3, #fbc4ab);
         }
 
-        .quiz-btn {
-            background: #f0f0f0;
-            border: 2px solid var(--secondary-color);
-            padding: 10px 20px;
-            margin: 10px 5px;
+        .final-title {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .final-text {
+            font-size: 1.3rem;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* --- Next Button Navigation --- */
+        .next-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 25px;
             border-radius: 20px;
             cursor: pointer;
-            width: 80%;
-            transition: 0.2s;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: 0.3s;
         }
 
-        .quiz-btn:hover {
-            background: var(--secondary-color);
+        .next-btn:hover {
+            background: var(--primary-color);
             color: white;
         }
 
-        /* --- Music Floating --- */
-        .music-box {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: white;
-            padding: 10px;
-            border-radius: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            z-index: 1000;
+        /* --- Animations --- */
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.1) rotate(2deg); }
         }
 
-        /* --- Animations --- */
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes heartBeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Responsive */
-        @media screen and (max-width: 600px) {
-            .timeline::after { left: 31px; }
-            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
-            .timeline-item::after { left: 18px; }
-            .left, .right { text-align: left; left: 0; }
-            .main-title { font-size: 2.3rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#story">Our Story</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#letter">Love Letter</a>
-        <a href="#reasons">Reasons</a>
-        <a href="#quiz">Fun Quiz</a>
-        <a href="#surprise">Birthday Wish</a>
-    </nav>
+    <section id="birthday-intro">
+        <div class="cake-container">
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+        </div>
+        <h1 class="cake-text">Happy Birthday, My Love! 🎂✨</h1>
+        <p style="font-size: 1.2rem; margin-top: 10px;">May all your sweetest dreams come true today.</p>
+        <button class="next-btn" onclick="scrollToSection('home')">Let's Begin Our Journey ✨</button>
+    </section>
 
-    <!-- Music Player (Replace URL with her favorite song link if you want, or keep standard) -->
-    <div class="music-box">
-        🎵 <audio id="bg-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" controls style="width: 150px; height: 30px;"></audio>
-    </div>
-
-    <!-- 1. Home & Countdown -->
     <section id="home">
-        <h1 class="main-title">Hey Beautiful ✨</h1>
-        <p>Welcome to our own little corner of the internet.</p>
+        <h2>Our Beautiful Journey ❤️</h2>
         <div class="countdown-container">
-            <p>Time passed since we became "Us" ❤️</p>
+            <p style="font-size: 1.1rem;">Time passed since we became "Us" (08 Dec 2024) 💕</p>
             <div id="timer">Loading counter...</div>
         </div>
+        <button class="next-btn" onclick="scrollToSection('gallery')">See Your Beautiful Pictures 📸</button>
     </section>
 
-    <!-- 2. Our Story (Timeline) -->
-    <section id="story">
-        <h2>Our Story Timeline ❤️</h2>
-        <div class="timeline">
-            <div class="timeline-item left">
-                <div class="content">
-                    <h3>How We Met 🌟</h3>
-                    <p>[তারিখ বা দিন] - সেই প্রথম তোমাকে দেখা। দুনিয়াটা হঠাৎ করেই সুন্দর হয়ে গিয়েছিল।</p>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="content">
-                    <h3>First Conversation 💬</h3>
-                    <p>আমাদের প্রথম হাই-হ্যালো, প্রথম টেক্সট। কথা বলতে বলতে কখন যে রাত পার হয়ে যেত!</p>
-                </div>
-            </div>
-            <div class="timeline-item left">
-                <div class="content">
-                    <h3>First Photo Together 📸</h3>
-                    <p>প্রথম একসাথে ছবি তোলার সেই মিষ্টি লজ্জা আর তোমার ওই সুন্দর হাসিটা!</p>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="content">
-                    <h3>Special Memories ✨</h3>
-                    <p>সবগুলো ডেট, ঝগড়া, মান-অভিমান আর দিনশেষে আরও গভীরভাবে কাছে আসা।</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Memory Gallery -->
     <section id="gallery">
         <h2>Memory Gallery 📸</h2>
-        <div class="gallery-grid">
-            <!-- Replace 'https://via.placeholder.com/300' with your actual image URLs -->
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300" alt="Memory 1">
-                <p>আমাদের সেই সুন্দর দিনটি 🌸</p>
+        <div class="gallery-container">
+            <div class="gallery-card">
+                <img src="pic1.jpg" alt="Beautiful Wifey">
+                <div class="gallery-caption">"Your elegance in this saree completely takes my breath away. Absolutely ethereal... 😍✨"</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300" alt="Memory 2">
-                <p>তোমার হাসির প্রেমে পড়ার দিন 💕</p>
+            <div class="gallery-card">
+                <img src="pic2.jpg" alt="Sweetest Smile">
+                <div class="gallery-caption">"That gentle gaze and shy smile of yours can melt my heart in a split second. 💕"</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300" alt="Memory 3">
-                <p>সবচেয়ে প্রিয় স্মৃতি 🌙</p>
+            <div class="gallery-card">
+                <img src="pic3.jpg" alt="Stunning Look">
+                <div class="gallery-caption">"Pure perfection. Every single time I look at you, I fall in love all over again. ❤️🌟"</div>
             </div>
         </div>
+        <button class="next-btn" onclick="scrollToSection('letter')">Read a Surprise Letter 💌</button>
     </section>
 
-    <!-- 4. Digital Love Letter -->
     <section id="letter">
-        <h2>Digital Love Letters ✨</h2>
-        <p style="margin-bottom: 20px;">I wrote something from the bottom of my heart...</p>
-        <button class="btn" onclick="toggleLetter()">Click here for a surprise</button>
+        <h2>A Message From My Heart ✨</h2>
+        <button class="btn" onclick="toggleLetter()">Click here for a surprise 👉👈</button>
         
         <div id="love-letter" class="hidden-letter">
-            <h3>My Dearest,</h3>
+            <p><strong>My dear wifey,</strong></p>
             <br>
-            <p>তুমি আমার জীবনে আসার পর থেকে প্রতিটি দিন একদম বদলে গেছে। তোমার ওই মিষ্টি হাসি, আমার মন খারাপের দিনে তোমার কথা বলা, আর সব পরিস্থিতিতে আমার পাশে থাকা—আমি সত্যিই অনেক ভাগ্য করে তোমাকে পেয়েছি।</p>
-            <p>আজকের এই বিশেষ দিনে আমি তোমাকে জানাতে চাই, আমি তোমাকে কতটা ভালোবাসি। সারাজীবন এভাবেই তোমার হাতটা ধরে পাশে থাকতে চাই।</p>
+            <p>I wanted to make something unique to express how much I love you. It took a lott of time but it's definitely worth it if you are happy 👉👈 continuum</p>
+            <p>Words truly fail to describe how much I love you so I built this little corner of the internet just for us..</p>
+            <p>Thank you for being mine, supporting me, loving me. You are my best friend, my wifeyy, my soulmate, my everything..</p>
+            <p>You are the most precious thing of my life..</p>
             <br>
-            <p><strong>ইতি,</strong><br>তোমার চিরকালের [তোমার নাম]</p>
+            <p><strong>Forever and always yourss,</strong><br>Mihirrr from your heartt 💋</p>
         </div>
+        <button class="next-btn" style="margin-top: 40px;" onclick="scrollToSection('reasons')">Why I Love You 💌</button>
     </section>
 
-    <!-- 5. Reasons Why I Love You -->
     <section id="reasons">
-        <h2>Reasons Why I Love You 💌</h2>
-        <div class="reasons-container">
+        <h2>Reasons Why I Love You 🎀</h2>
+        <div class="reasons-stack">
             <div class="reason-card">
                 <h3>Reason #1</h3>
-                <p>Your smile makes my worst days so much better.</p>
+                <p style="margin-top: 5px;">Your smile instantly makes my entire day so much brighter.</p>
             </div>
             <div class="reason-card">
                 <h3>Reason #2</h3>
-                <p>You always listen to me, even when I talk nonsense.</p>
+                <p style="margin-top: 5px;">You always listen to me and understand me like no one else can.</p>
             </div>
             <div class="reason-card">
                 <h3>Reason #3</h3>
-                <p>The way you care for me like no one else can.</p>
-            </div>
-            <div class="reason-card">
-                <h3>Reason #4</h3>
-                <p>Your kindness and the beautiful soul you have.</p>
+                <p style="margin-top: 5px;">The way you hold my hand and make me feel complete.</p>
             </div>
         </div>
+        <button class="next-btn" onclick="scrollToSection('surprise')">One Last Thing... 🌙</button>
     </section>
 
-    <!-- 6. Fun Quiz -->
-    <section id="quiz">
-        <h2>How Well Do You Know Us? 🎁</h2>
-        <div class="quiz-container">
-            <p id="quiz-question">Where did we talk for the very first time?</p>
-            <button class="quiz-btn" onclick="checkAnswer(true)">Facebook/Instagram 📱</button>
-            <button class="quiz-btn" onclick="checkAnswer(false)">In Person 🏫</button>
-            <p id="quiz-result" style="margin-top: 15px; font-weight: bold; color: var(--primary-color);"></p>
-        </div>
-    </section>
-
-    <!-- 7. Final Surprise Section -->
-    <section id="surprise" style="background: linear-gradient(to bottom, #ffe5ec, #fbc4ab);">
-        <h2 style="font-size: 3rem;">Happy Birthday, My Love! 🌙</h2>
-        <p style="font-size: 1.3rem; max-width: 600px; margin-top: 20px;">
-            Thank you for being part of my life. Thank you for being YOU. 
-            May all your dreams come true, and I promise to be there to celebrate every single one of them with you.
+    <section id="surprise">
+        <h1 class="final-title">Happy Birthday, My Love! 🌙</h1>
+        <p class="final-text">
+            Thank you for being part of my life. Thank you for making every ordinary day feel extraordinary. 
+            I promise to stand by you through every joy, every challenge, and every beautiful milestone ahead.
         </p>
-        <p style="font-size: 2rem; margin-top: 30px;">Forever & Always ❤️</p>
+        <p style="font-size: 2.2rem; font-weight: bold; color: var(--primary-color);">Forever & Always Your Mihir ❤️</p>
     </section>
 
     <script>
-        // --- 1. Countdown Timer Logic ---
-        // Set the date when you started dating (Year, Month [0-11], Day, Hour, Minute)
-        // Note: January is 0, February is 1, etc.
-        const anniversaryDate = new Date(2024, 4, 15, 0, 0, 0); 
+        // --- 1. Navigation Flow Logic ---
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // --- 2. Relationship Countdown Timer Logic (Starts from 8th Dec 2024) ---
+        const anniversaryDate = new Date(2024, 11, 8, 0, 0, 0); // Month is 11 for December
 
         function updateCountdown() {
             const now = new Date();
@@ -460,8 +371,9 @@
                 `${days} Days, ${hours} Hours, ${minutes} Mins, ${seconds} Secs`;
         }
         setInterval(updateCountdown, 1000);
+        updateCountdown(); // Run instantly
 
-        // --- 2. Toggle Love Letter ---
+        // --- 3. Toggle Love Letter ---
         function toggleLetter() {
             const letter = document.getElementById("love-letter");
             if (letter.style.display === "block") {
@@ -469,16 +381,6 @@
             } else {
                 letter.style.display = "block";
                 letter.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        // --- 3. Simple Quiz Logic ---
-        function checkAnswer(isCorrect) {
-            const result = document.getElementById("quiz-result");
-            if(isCorrect) {
-                result.innerHTML = "Correct! 🌟 You remember everything!";
-            } else {
-                result.innerHTML = "Oops! 🙈 Try recalling our early days again!";
             }
         }
     </script>
